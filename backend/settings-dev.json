@@ -1,0 +1,5 @@
+{
+  "public": {
+    "signalingUrl":"localhost:8888"
+  }
+}

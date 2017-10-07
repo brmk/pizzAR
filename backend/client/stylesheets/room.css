@@ -1,0 +1,12 @@
+.video-wrapper{
+  height: auto;
+}
+
+video{
+  width: 100%
+}
+
+.activities-list .list-group-item{
+  cursor: pointer;
+  font-size: 20px;
+}
