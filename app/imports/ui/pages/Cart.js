@@ -42,10 +42,11 @@ export default class Cart extends Component {
     );
   }
 
-  renderRow(row, index, state) {
+  renderRow(row, self) {
+    console.log(row, self)
     let quantity = row.quantity || 1;
     return (
-      <Ons.ListItem key={index}>
+      <Ons.ListItem key={row.id}>
         <div className='left'>
           <img src={row.img} className='list-item__thumbnail' />
         </div>
@@ -65,6 +66,17 @@ export default class Cart extends Component {
         </div>
         <div className='right'>
           {sizes[row.size]}
+          <Ons.Icon onClick={()=>{
+            let cart = Session.get('cart');
+            if(!Array.isArray(cart)){
+              cart = []
+            }
+            _.remove(cart, function(n) {
+              return n.id == row.id;
+            })
+            self.setState({pizzas:cart})
+            Session.set('cart', cart)
+          }} icon='fa-times' size={15}/>
         </div>
       </Ons.ListItem>
     );
@@ -96,8 +108,7 @@ export default class Cart extends Component {
     cart.forEach((pizza)=>{ 
       total+=pizza.price
     })
-
-    return total.toFixed()
+    return parseInt(total).toFixed()
   }
 
   handlePhoneChange(e) {
@@ -142,7 +153,7 @@ export default class Cart extends Component {
           
           <Ons.List
             dataSource={Session.get('cart') || []}
-            renderRow={this.renderRow}
+            renderRow={(row)=>{return this.renderRow(row, this)}}
             renderHeader={() => <Ons.ListHeader>Cart</Ons.ListHeader>}
           />
           <div>
