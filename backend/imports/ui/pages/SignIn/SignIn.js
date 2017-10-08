@@ -41,7 +41,6 @@ const SignIn = props => {
 									Sign in
 								</button>
 							</div>
-							<div className="text-center"><a href="/sign-up">Sign Up</a></div>
 						</form>
 					</div>
 				</div>

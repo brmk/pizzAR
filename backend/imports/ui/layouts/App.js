@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import  AppNavigation from '../components/navigation/AppNavigation';
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -32,8 +33,8 @@ export default class App extends React.Component {
 
   render() {
 	  return (
-
-        
+      <div className="wrapper smoke">
+      <AppNavigation/>
         <div className="container-fluid">
           <div className="row main-content">
               <div className="col-sm-12"> 
@@ -43,7 +44,7 @@ export default class App extends React.Component {
               </div>
           </div>	
         </div>
-
+      </div>
 		);
 	}
 }

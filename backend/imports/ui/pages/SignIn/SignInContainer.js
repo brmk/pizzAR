@@ -57,7 +57,7 @@ class SignInContainer extends Component {
       if (error) {
         console.log(error.reason);
       } else {
-        FlowRouter.go('Dashboard');
+        FlowRouter.go('Home');
       }
     });
   }

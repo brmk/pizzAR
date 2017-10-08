@@ -1,0 +1,84 @@
+[
+  {
+    "orderPrice": 231,
+    "ordererPhone": "+380999999999",
+    "ordererAddress": "Ternopil, BAM",
+    "pizzas": [
+      {
+        "name": "CAPRICCIOSA",
+        "img": "http://fresh.if.ua/wp-content/uploads/2014/11/6.jpg",
+        "price": 11,
+        "weight": 400
+      },
+      {
+        "name": "SALAMI",
+        "img": "https://thumbs.dreamstime.com/z/salami-pizza-isolated-white-background-31622814.jpg",
+        "price": 22,
+        "weight": 500
+
+      },
+      {
+        "name": "New York pizza",
+        "img": "https://pantograph0.goldbely.com/cfill-h630-w1200/uploads/product_image/image/11711/authentic-new-york-pizza.089cd28a335e19c3e282c99dc41622ed.jpg",
+        "price": 33,
+        "weight": 450
+
+      },
+      {
+        "name": "Salad pizza",
+        "img": "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ay/11/04/argula-salad-pizza-ay-x.jpg?itok=HlVbi5uP",
+        "price": 44,
+        "weight": 434
+      },
+      {
+        "name": "Custom",
+        "img": "http://www.chophappy.com/wp-content/uploads/2017/03/Pizzafries8.jpg",
+        "price": 55,
+        "weight": 434,
+        "ingridients":["red sause", "cheese", "ham", "mushrooms"]
+      }
+    ]
+  },
+
+  {
+    "orderPrice": 10,
+    "ordererPhone": "+380966666666",
+    "ordererAddress": "Ternopil, Aljaska",
+    "pizzas": [
+      {
+        "name": "pizza1",
+        "img": "http://www.startuppizza.com.ua/images/products/599406372.png",
+        "price": 1,
+        "weight": 400
+      },
+      {
+        "name": "custom",
+        "img": "http://kamelot-pizza.com.ua/images/stories/virtuemart/product/chipola10.png.pagespeed.ce.uQnQl-eVPU.png",
+        "ingridients": ["white sause", "ham", "pineapple", "cheese"],
+        "price": 2,
+        "weight": 500
+
+      },
+      {
+        "name": "pizza2",
+        "img": "https://mafia.ua/storage/editor/fotos/480x0/stadzhioni-metrovaya_1494581936774.jpeg",
+        "price": 1,
+        "weight": 450
+
+      },
+      {
+        "name": "pizza3",
+        "img": "http://kamelot-pizza.com.ua/images/stories/virtuemart/product/resized/%D0%A7%D0%B8%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_400x400.jpg",
+        "price": 1,
+        "weight": 434
+      },
+      {
+        "name": "custom2",
+        "img": "https://adriano.com.ua/uploads/product_pic/59610bc96c656f40e31e9601/preview_pizza-margarita-adriano.jpg",
+        "price": 5,
+        "weight": 434,
+        "ingridients":["red sause", "cheese", "ham", "mushrooms"]
+      }
+    ]
+  }
+]
