@@ -128,28 +128,33 @@ export default class Cart extends Component {
 
       <div className="Cart">
         <Ons.Page renderToolbar={this.renderToolbar}>
-          <Ons.Row verticalAlign='center' className='center'>
-            <Ons.Col width='100%' className='center'>
-              <Ons.Input
-                value={this.state.phone}
-                onChange={(e)=>{this.handlePhoneChange(e)}}
-                modifier='underbar'
-                
-                placeholder='Phone' />
-            </Ons.Col>
-            
-          </Ons.Row>
-          <Ons.Row verticalAlign='center' className='center'>
-            <Ons.Col>
-              <Ons.Input
-                value={this.state.address}
-                onChange={(e)=>{this.handleAddressChange(e)}}
-                modifier='underbar'
-                
-                placeholder='Address' />
-            </Ons.Col>
-            
-          </Ons.Row>
+          <section style={{textAlign: 'center', marginTop:'20px'}}>
+            <Ons.Row verticalAlign='center' className='center'>
+              <Ons.Col width='100%' className='center'>
+                <p>
+                  <Ons.Input
+                    value={this.state.phone}
+                    onChange={(e)=>{this.handlePhoneChange(e)}}
+                    modifier='material'
+                    
+                    placeholder='Phone' />
+                </p>
+              </Ons.Col>
+              
+            </Ons.Row>
+            <Ons.Row verticalAlign='center' className='center'>
+              <Ons.Col>
+                <p>
+                  <Ons.Input
+                    value={this.state.address}
+                    onChange={(e)=>{this.handleAddressChange(e)}}
+                    modifier='material'
+                    
+                    placeholder='Address' />
+                </p>
+              </Ons.Col>
+              
+            </Ons.Row>
           
           <Ons.List
             dataSource={Session.get('cart') || []}
@@ -161,6 +166,8 @@ export default class Cart extends Component {
           </div>
           <Ons.Button style={{margin: '6px'}} onClick={()=>{this.makeOrder()}} modifier='large'>Make Order</Ons.Button>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
+
+          </section>
         </Ons.Page>
       </div>
     );
