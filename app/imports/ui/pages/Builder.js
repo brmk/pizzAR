@@ -136,12 +136,14 @@ export default class Builder extends Component {
 
             }
 
-            <div style={{fontSize: "20px", textAlign:'center', width:'100%'}}>
+            <div style={{fontSize: "20px", textAlign:'center', width:'100%', marginTop: '10px'}}>
               <span 
                 style={{
                   backgroundColor: this.state.size == 0.7?'#009588':'transparent',
                   color: this.state.size == 0.7?"white":"black",
                   padding: '4px 8px',
+                  width: '34px',
+                  display: 'inline-block',
                   margin:'0 5px',
                   borderRadius: '50%'
                 }}
@@ -154,6 +156,8 @@ export default class Builder extends Component {
                   backgroundColor: this.state.size == 1?'#009588':'transparent',
                   color: this.state.size == 1?"white":"black",
                   padding: '4px 8px',
+                  width: '34px',
+                  display: 'inline-block',
                   borderRadius: '50%',
                   margin:'0 5px',
                 }}
@@ -166,6 +170,8 @@ export default class Builder extends Component {
                   backgroundColor: this.state.size == 1.5?'#009588':'transparent',
                   color: this.state.size == 1.5?"white":"black",
                   padding: '4px 8px',
+                  width: '34px',
+                  display: 'inline-block',
                   borderRadius: '50%',
                   margin:'0 5px',
                 }}
@@ -177,8 +183,10 @@ export default class Builder extends Component {
             
           </Ons.Row>
 
-          <Ons.Button style={{margin: '6px'}} onClick={()=>{this.renderCustomAR()}} modifier='large'>Watch on my table</Ons.Button>
-          <Ons.Button style={{margin: '6px'}} onClick={()=>{this.addToCart()}} modifier='large'>Add to cart</Ons.Button>
+          <div style={{marginTop:'35px'}}>
+            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.renderCustomAR()}} modifier='large'>See live</Ons.Button>
+            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.addToCart()}} modifier='large'>Add to cart</Ons.Button>
+          </div>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
         </Ons.Page>
       </div>
