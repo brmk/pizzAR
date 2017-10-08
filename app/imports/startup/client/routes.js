@@ -6,6 +6,7 @@ import { mount } from 'react-mounter';
 // Import needed templates (layout and pages)
 import App from '../../ui/layouts/App';
 import Home from '../../ui/pages/Home';
+import Menu from '../../ui/pages/Menu';
 
 
 FlowRouter.route('/', {
@@ -13,6 +14,15 @@ FlowRouter.route('/', {
 	action() {
 		mount(App, {
 			main: (<Home />)
+		});
+	}
+});
+
+FlowRouter.route('/menu', {
+	name: 'Menu',
+	action() {
+		mount(App, {
+			main: (<Menu />)
 		});
 	}
 });
