@@ -102,8 +102,8 @@ class Menu extends Component {
                     <Ons.Col width="80%">
                       <div>
                         <h3>{pizza.name}</h3>
-                        <h5>{pizza.price} UAH</h5>
-                        <h5>{pizza.weight} g</h5>
+                        <h5>{pizza.price*this.state.sizes[key]} UAH</h5>
+                        <h5>{pizza.weight*this.state.sizes[key]} g</h5>
                         <div style={{fontSize: "20px"}}>
                           <span 
                             style={{

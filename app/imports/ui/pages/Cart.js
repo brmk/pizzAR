@@ -97,7 +97,7 @@ export default class Cart extends Component {
       total+=pizza.price
     })
 
-    return total
+    return total.toFixed()
   }
 
   handlePhoneChange(e) {
