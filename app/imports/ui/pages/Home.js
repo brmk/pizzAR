@@ -15,7 +15,7 @@ import OnsenUI from 'onsenui';
 import Ons from 'react-onsenui'; 
 
 
-class Home extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
   
@@ -75,13 +75,4 @@ Home.propTypes = {
   // loading: PropTypes.bool,
 };
 
-export default HomeContainer = createContainer(({ itemId }) => {
-  // const handle = Meteor.subscribe('users.byId', userId);
-  // const loading = !handle.ready();
-  // const user = Meteor.users.findOne(userId);
 
-  return {
-    // loading,
-    // user,
-  };
-}, Home);

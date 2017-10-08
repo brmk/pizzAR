@@ -5,28 +5,72 @@ import { Roles } from 'meteor/alanning:roles';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Logger } from '/imports/modules/logger.js';
 
+import OnsenUI from 'onsenui';
+import Ons from 'react-onsenui';
+
+import Home from '../pages/Home';
+import Menu from '../pages/Menu';
+
 export default class App extends React.Component {
 
   componentWillReceiveProps(){
     
   }
-  componentDidMount() {
-  	this.logoutComputation = Tracker.autorun(()=>{ 
-  		// Logger.log('Logout computation');
-	   //  if(Meteor.loggingIn() || !Roles.subscription.ready()) return;
-	   //  let userId = Meteor.userId();
-	   //  if(!userId || !Roles.userIsInRole(userId, 'admin')){
-	   //  	Logger.log('User is not admin or not logged in! Logging out')
-	   //  	Meteor.logout();
-	   //  	FlowRouter.go('SignIn');
-	   //  }
-	   
-	  });
+
+  renderToolbar(route, navigator) {
+    const backButton = route.hasBackButton
+      ? <Ons.BackButton onClick={this.back.bind(this, navigator)}>Back</Ons.BackButton>
+      : null;
+
+    return (
+      <Ons.Toolbar>
+        <div className='left'>{backButton}</div>
+        <div className='center'>{route.title}</div>
+      </Ons.Toolbar>
+    );
   }
 
-  componentWillUnmount(){
-  	this.logoutComputation.stop();
+  back(){
+    navigator.popPage();
   }
+
+  pushPage(page,navigator) {
+    navigator.pushPage(page);
+  }
+
+  renderPage(route, navigator) {
+    console.log(route)
+    const routes = {
+      Home,
+      Menu
+    }
+
+    const component = routes[route.key];
+
+    console.log(component)
+    return component
+    return (
+      <component 
+        key={Math.random}
+        pushPage={this.pushPage.bind(this)}
+        back={this.back.bind(this)}
+        navigator={navigator}
+      />
+    );
+  }
+
+  // render() {
+  //   return (
+  //     <Ons.Navigator
+  //       swipeable
+  //       renderPage={this.renderPage.bind(this)}
+  //       initialRoute={{
+  //         key: 'Home',
+  //         hasBackButton: false
+  //       }}
+  //     />
+  //   );
+  // }
 
 
   render() {
