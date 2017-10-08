@@ -1,0 +1,31 @@
+.Home {
+  .page__background{
+    background-position: center;
+    background-size: cover;
+    background-image: url("/img/bg.jpg") !important;
+  }
+  .page__content{ 
+    padding: 10px;
+    display: flex;
+    .card {
+      vertical-align: middle;
+      display: inline-block; 
+      margin: auto;
+      background: rgba(255,255,255,0.7) !important;
+      .brand-logo {
+        margin-bottom: 30px;
+        display: inline-block;
+        max-width: 100%;
+        height:auto;
+
+      }
+
+    }
+  }
+}
+
+.img-responsive {
+  max-width:100%;
+  height:auto;
+  display:block;
+}
