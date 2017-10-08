@@ -7,6 +7,7 @@ import { mount } from 'react-mounter';
 import App from '../../ui/layouts/App';
 import Home from '../../ui/pages/Home';
 import Menu from '../../ui/pages/Menu';
+import Cart from '../../ui/pages/Cart';
 
 
 FlowRouter.route('/', {
@@ -23,6 +24,15 @@ FlowRouter.route('/menu', {
 	action() {
 		mount(App, {
 			main: (<Menu />)
+		});
+	}
+});
+
+FlowRouter.route('/cart', {
+	name: 'Cart',
+	action() {
+		mount(App, {
+			main: (<Cart />)
 		});
 	}
 });

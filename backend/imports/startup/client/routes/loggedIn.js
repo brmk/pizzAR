@@ -5,8 +5,8 @@ import { mount } from "react-mounter";
 
 // Import needed templates (layout and pages)
 import App from "/imports/ui/layouts/App";
-import Dashboard from "/imports/ui/pages/Dashboard";
-import Room from "/imports/ui/pages/Room"
+import Order from "../../../ui/components/Order/Order";
+import OrdersListContainer from "../../../ui/components/OrdersListContainer/OrdersListContainer";
 
 const loggedIn = FlowRouter.group({
   name: "loggedIn",
@@ -19,24 +19,24 @@ const loggedIn = FlowRouter.group({
   ]
 });
 
-loggedIn.route('/dashboard',{
-  name: 'Dashboard',
+loggedIn.route('/ordersList',{
+  name: 'OrdersList',
   action(params, queryParams) {
     mount(App, {
       main: (
-        <Dashboard/>
+        <OrdersListContainer/>
       ),
     });
   },
 });
 
-loggedIn.route('/room/:roomId',{
-  name: 'Room',
+loggedIn.route('/order/:orderId',{
+  name: 'OrderInfo',
   action(params, queryParams) {
     mount(App, {
       main: (
-        <Room
-          roomId={params.roomId}
+        <Order
+          orderId={params.orderId}
         />
       ),
     });

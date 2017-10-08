@@ -61,6 +61,11 @@ class Menu extends Component {
           <Ons.BackButton onClick={()=>{history.back()}}>Back</Ons.BackButton>
         </div>
         <div className='center'>Menu</div>
+        <div className='right' style={{marginRight: "20px"}}>
+          <Ons.Icon onClick={()=>{
+            FlowRouter.go('Cart')
+          }} icon='fa-shopping-cart' size={30}/>
+        </div>
       </Ons.Toolbar>
     );
   }
@@ -164,6 +169,41 @@ class Menu extends Component {
                         <h3>{pizza.name}</h3>
                         <h5>{pizza.price} UAH</h5>
                         <h5>{pizza.weight} g</h5>
+                        <div style={{fontSize: "20px"}}>
+                          <span 
+                            style={{
+                              color: this.state.sizes[key] == 0.7?"red":"black",
+                              paddingRight: "10px"
+                            }}
+                            onClick={()=>{
+                              let sizes = this.state.sizes;
+                              sizes[key] = 0.7;
+                              this.setState({sizes})
+                            }}
+                          >S</span>
+                          <span 
+                            style={{
+                              color: this.state.sizes[key] == 1?"red":"black",
+                              paddingRight: "10px"
+                            }}
+                            onClick={()=>{
+                              let sizes = this.state.sizes;
+                              sizes[key] = 1;
+                              this.setState({sizes})
+                            }}
+                          >M</span>
+                          <span 
+                            style={{
+                              color: this.state.sizes[key] == 1.5?"red":"black",
+                              paddingRight: "10px"
+                            }}
+                            onClick={()=>{
+                              let sizes = this.state.sizes;
+                              sizes[key] = 1.5;
+                              this.setState({sizes})
+                            }}
+                          >L</span>
+                        </div>
                       </div>
                     </Ons.Col>
                     <Ons.Col width="20%">
@@ -173,10 +213,12 @@ class Menu extends Component {
                           cart = []
                         }
                         cart.push({
+                          id: Meteor.uuid(),
                           name: pizza.name,
                           price: pizza.price * this.state.sizes[key],
                           weight: pizza.weight * this.state.sizes[key],
-                          img: pizza.image
+                          img: pizza.image,
+                          size: this.state.sizes[key]
                         })
                         Session.set('cart', cart)
                         console.log(cart)

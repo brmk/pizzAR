@@ -5,14 +5,7 @@
 import '/imports/api/users/methods.js';
 import '/imports/api/users/server/publications.js';
 
+// orders
 
-// rooms
-
-import '/imports/api/rooms/methods.js';
-import '/imports/api/rooms/server/publications.js';
-
-
-// books
-
-import '/imports/api/books/methods.js';
-import '/imports/api/books/server/publications.js';
+import '/imports/api/orders/methods.js';
+import '/imports/api/orders/server/publications.js';
