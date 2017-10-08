@@ -74,16 +74,25 @@ class Menu extends Component {
     console.log('initializing at Menu.js')
   }
 
-  renderCustomAR(){
-    
-    WorldInit.initialize();
-    
-  }
-
   render(){
     return (
       <Ons.Page renderToolbar={this.renderToolbar}>
         <Ons.Row>
+          <Ons.Col width="50%">
+            <Ons.Card verticalAlign>
+              <img className="img-responsive" src="https://image.freepik.com/free-icon/add-filled-cross-sign_318-75178.jpg"/>
+              <Ons.Row>
+                <Ons.Col width="100%">
+                  <div>
+                    <br/>
+                    <br/>
+                    <Ons.Button onClick={()=>{FlowRouter.go('Builder')}} style={{margin: '6px'}} modifier='large'>BUILD PIZZA</Ons.Button>
+                    <br/>
+                  </div>
+                </Ons.Col>
+              </Ons.Row>
+            </Ons.Card>
+          </Ons.Col>
           {_.map(pizzas, (pizza, key)=>{
             return (
               <Ons.Col key={key} width="50%">
@@ -156,21 +165,7 @@ class Menu extends Component {
             )
           })}
 
-          <Ons.Col width="50%">
-            <Ons.Card verticalAlign>
-              <img className="img-responsive" src="https://image.freepik.com/free-icon/add-filled-cross-sign_318-75178.jpg"/>
-              <Ons.Row>
-                <Ons.Col width="100%">
-                  <div>
-                    <br/>
-                    <br/>
-                    <Ons.Button onClick={()=>{FlowRouter.go('Builder')}} style={{margin: '6px'}} modifier='large'>BUILD PIZZA</Ons.Button>
-                    <br/>
-                  </div>
-                </Ons.Col>
-              </Ons.Row>
-            </Ons.Card>
-          </Ons.Col>
+          
         </Ons.Row>
         
 

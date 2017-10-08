@@ -20,7 +20,8 @@
       loaded: false,
 
       init: function initFn(data) {
-        alert(JSON.stringify(data));
+        alert(JSON.stringify(data))
+        window.World.data = data;
         this.createOverlays();
       },
 
@@ -46,15 +47,24 @@
         */
 
         const startScale = 1.7;
+        const data = window.World.data;
+        const {ingridients, size} = data;
         
-        /* Create overlay for page one */
-        var imgOne = new AR.ImageResource("http://192.168.101.140:3000/assets/pizza-base.png");
-        
-        var overlayOne = new AR.ImageDrawable(imgOne, 1.7);
+        let scale = startScale*size;
 
-        var imgTwo = new AR.ImageResource("http://192.168.101.140:3000/assets/ham.png");
+        /* Create overlay for page one */
+        var base = new AR.ImageResource("http://192.168.101.140:3000/assets/pizza-base.png");
+        var baseLayer = new AR.ImageDrawable(base, scale);
+
+        const stack = [baseLayer];
         
-        var overlayTwo = new AR.ImageDrawable(imgTwo, 1.7);
+        ingridients.forEach((ingridient)=>{
+          var img = new AR.ImageResource(`http://192.168.101.140:3000/assets/${ingridient}.png`);
+          
+          var overlayTwo = new AR.ImageDrawable(img, scale);
+
+          stack.push(overlayTwo);
+        });
 
         /*
           The last line combines everything by creating an AR.ImageTrackable with the previously created tracker, the name of the image target and the drawable that should augment the recognized image.
@@ -62,7 +72,7 @@
         */
         var pageOne = new AR.ImageTrackable(this.tracker, "*", {
           drawables: {
-            cam: [overlayOne,overlayTwo]
+            cam: stack
           },
           onImageRecognized: this.removeLoadingBar,
                 onError: function(errorMessage) {
@@ -70,9 +80,6 @@
                 }
         });
 
-
-
-        
       },
 
       removeLoadingBar: function() {
@@ -92,7 +99,6 @@
       }
     };
 
-    alert('initializing')
     // World.init();
 
   </script>

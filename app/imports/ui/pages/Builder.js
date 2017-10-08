@@ -29,7 +29,7 @@ let ingridientsPrices = {
   salami: 15,
   tomato: 10
 }
-let ingridients = ["ham", "mushroom", "pineapple", "salami", "tomato", "cheese"];
+let ingridients = ["ham", "mushroom", "pineapple", "salami", "tomato", /*"cheese"*/];
 
 export default class Builder extends Component {
   constructor(props) {
@@ -47,6 +47,11 @@ export default class Builder extends Component {
       total+=ingridientsPrices[ingridient]
     })
     return total;
+  }
+
+  renderCustomAR(){
+    const {ingridients, size} = this.state;
+    WorldInit.initialize({ingridients, size});
   }
 
   addToCart(){
@@ -85,43 +90,58 @@ export default class Builder extends Component {
   render(){
     return (
 
+
+
       <div className="Builder">
         <Ons.Page renderToolbar={this.renderToolbar}>
           <Ons.Row verticalAlign='center' className='center'>
             <Ons.Col width='100%' className='center'>
-              <img className="img-responsive" style={{maxHeight: "300px"}} src='/img/pizza_base.jpg'/>
+              <div style={{textAlign:'center'}}>
+                <div style={{position:'relative', display:'inline-block'}}>
+                  <img className="img-responsive" style={{maxHeight: "300px"}} src='/assets/pizza-base.png'/>
+                  {
+                    this.state.ingridients.map((ingridient)=>{
+                      return <img className="img-responsive img-overlay" style={{maxHeight: "300px", position:'absolute', top:0, left:0}} src={`/assets/${ingridient}.png`}/>
+                    })
+                  }
+                </div>
+              </div>
             </Ons.Col>
           </Ons.Row>
-
           <Ons.Row verticalAlign='center' className='center'>
             {ingridients.map((ingridient)=>{
               return (
-                <Ons.Col key={ingridient} width="17%">
-                  <img
-                    className={`image-responsive ${this.state.ingridients.indexOf(ingridient)!=-1?'active':''}`}
-                    style={{padding: "5px", maxHeight:"50px"}} src={`/img/${ingridient}.jpg`} 
-                    onClick={()=>{
-                      let ingridients = this.state.ingridients
-                      if(ingridients.indexOf(ingridient)!=-1){
-                        _.pull(ingridients, ingridient)
-                      } else {
-                        ingridients.push(ingridient)
-                      }
+                <Ons.Col key={ingridient} width="20%">
+                  <div style={{textAlign: 'center'}}>
+                    <img
+                      className={`image-responsive ${this.state.ingridients.indexOf(ingridient)!=-1?'active':''}`}
+                      style={{padding: "5px", maxHeight:"50px"}} src={`/img/${ingridient}.jpg`} 
+                      onClick={()=>{
+                        let ingridients = this.state.ingridients
+                        if(ingridients.indexOf(ingridient)!=-1){
+                          _.pull(ingridients, ingridient)
+                        } else {
+                          ingridients.push(ingridient)
+                        }
 
-                      this.setState({ingridients})
-                    }}
-                  />
+                        this.setState({ingridients})
+                      }}
+                    />
+                  </div>
                 </Ons.Col>
               )
             })
 
             }
 
-            <div style={{fontSize: "20px"}}>
+            <div style={{fontSize: "20px", textAlign:'center', width:'100%'}}>
               <span 
                 style={{
-                  color: this.state.size == 0.7?"red":"black",
-                  paddingRight: "10px"
+                  backgroundColor: this.state.size == 0.7?'#009588':'transparent',
+                  color: this.state.size == 0.7?"white":"black",
+                  padding: '4px 8px',
+                  margin:'0 5px',
+                  borderRadius: '50%'
                 }}
                 onClick={()=>{
                   this.setState({size:0.7})
@@ -129,8 +149,11 @@ export default class Builder extends Component {
               >S</span>
               <span 
                 style={{
-                  color: this.state.size == 1?"red":"black",
-                  paddingRight: "10px"
+                  backgroundColor: this.state.size == 1?'#009588':'transparent',
+                  color: this.state.size == 1?"white":"black",
+                  padding: '4px 8px',
+                  borderRadius: '50%',
+                  margin:'0 5px',
                 }}
                 onClick={()=>{
                   this.setState({size: 1})
@@ -138,8 +161,11 @@ export default class Builder extends Component {
               >M</span>
               <span 
                 style={{
-                  color: this.state.size == 1.5?"red":"black",
-                  paddingRight: "10px"
+                  backgroundColor: this.state.size == 1.5?'#009588':'transparent',
+                  color: this.state.size == 1.5?"white":"black",
+                  padding: '4px 8px',
+                  borderRadius: '50%',
+                  margin:'0 5px',
                 }}
                 onClick={()=>{
                   this.setState({size: 1.5})
@@ -149,7 +175,7 @@ export default class Builder extends Component {
             
           </Ons.Row>
 
-          <Ons.Button style={{margin: '6px'}} onClick={()=>{}} modifier='large'>Watch on my table</Ons.Button>
+          <Ons.Button style={{margin: '6px'}} onClick={()=>{this.renderCustomAR()}} modifier='large'>Watch on my table</Ons.Button>
           <Ons.Button style={{margin: '6px'}} onClick={()=>{this.addToCart()}} modifier='large'>Add to cart</Ons.Button>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
         </Ons.Page>
