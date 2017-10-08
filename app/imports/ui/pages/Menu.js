@@ -62,7 +62,7 @@ class Menu extends Component {
         {_.map(pizzas, (pizza, key)=>{
           return (<Ons.Col width="50%">
             <Ons.Card verticalAlign>
-              <img src="http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg"/>
+              <img className="img-responsive" src="http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg"/>
               <Ons.Col width="80%">
                 <div>
                   <h3>{pizza.name}</h3>
