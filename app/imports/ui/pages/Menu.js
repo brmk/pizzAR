@@ -104,41 +104,7 @@ class Menu extends Component {
                         <h3>{pizza.name}</h3>
                         <h5>{pizza.price} UAH</h5>
                         <h5>{pizza.weight} g</h5>
-                        <div style={{fontSize: "20px"}}>
-                          <span 
-                            style={{
-                              color: this.state.sizes[key] == 0.7?"red":"black",
-                              paddingRight: "10px"
-                            }}
-                            onClick={()=>{
-                              let sizes = this.state.sizes;
-                              sizes[key] = 0.7;
-                              this.setState({sizes})
-                            }}
-                          >S</span>
-                          <span 
-                            style={{
-                              color: this.state.sizes[key] == 1?"red":"black",
-                              paddingRight: "10px"
-                            }}
-                            onClick={()=>{
-                              let sizes = this.state.sizes;
-                              sizes[key] = 1;
-                              this.setState({sizes})
-                            }}
-                          >M</span>
-                          <span 
-                            style={{
-                              color: this.state.sizes[key] == 1.5?"red":"black",
-                              paddingRight: "10px"
-                            }}
-                            onClick={()=>{
-                              let sizes = this.state.sizes;
-                              sizes[key] = 1.5;
-                              this.setState({sizes})
-                            }}
-                          >L</span>
-                        </div>
+                        
                       </div>
                     </Ons.Col>
                     <Ons.Col width="20%">
@@ -160,6 +126,44 @@ class Menu extends Component {
                       }} icon='fa-shopping-cart' size={30}/>
                     </Ons.Col>
                   </Ons.Row>
+                  <div style={{fontSize: "20px"}}>
+                    <span 
+                      style={{
+                        color: this.state.sizes[key] == 0.7?"white":"black",
+                        margin: "0 9px"  
+                      }}
+                      className={this.state.sizes[key] == 0.7?'size-label active':'size-label'}
+                      onClick={()=>{
+                        let sizes = this.state.sizes;
+                        sizes[key] = 0.7;
+                        this.setState({sizes})
+                      }}
+                    >S</span>
+                    <span 
+                      style={{
+                        color: this.state.sizes[key] == 1?"white":"black",
+                        margin: "0 9px"  
+                      }}
+                      className={this.state.sizes[key] == 1?'size-label active':'size-label'}
+                      onClick={()=>{
+                        let sizes = this.state.sizes;
+                        sizes[key] = 1;
+                        this.setState({sizes})
+                      }}
+                    >M</span>
+                    <span 
+                      style={{
+                        color: this.state.sizes[key] == 1.5?"white":"black",
+                        margin: "0 9px"  
+                      }}
+                      className={this.state.sizes[key] == 1.5?'size-label active':'size-label'}
+                      onClick={()=>{
+                        let sizes = this.state.sizes;
+                        sizes[key] = 1.5;
+                        this.setState({sizes})
+                      }}
+                    >L</span>
+                  </div>
                 </Ons.Card>
               </Ons.Col>
             )

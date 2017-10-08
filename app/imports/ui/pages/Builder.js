@@ -139,12 +139,8 @@ export default class Builder extends Component {
                 style={{
                   backgroundColor: this.state.size == 0.7?'#009588':'transparent',
                   color: this.state.size == 0.7?"white":"black",
-                  padding: '4px 8px',
-                  width: '34px',
-                  display: 'inline-block',
-                  margin:'0 5px',
-                  borderRadius: '50%'
                 }}
+                className="size-label"
                 onClick={()=>{
                   this.setState({size:0.7})
                 }}
@@ -153,12 +149,8 @@ export default class Builder extends Component {
                 style={{
                   backgroundColor: this.state.size == 1?'#009588':'transparent',
                   color: this.state.size == 1?"white":"black",
-                  padding: '4px 8px',
-                  width: '34px',
-                  display: 'inline-block',
-                  borderRadius: '50%',
-                  margin:'0 5px',
                 }}
+                className="size-label"
                 onClick={()=>{
                   this.setState({size: 1})
                 }}
@@ -167,12 +159,8 @@ export default class Builder extends Component {
                 style={{
                   backgroundColor: this.state.size == 1.5?'#009588':'transparent',
                   color: this.state.size == 1.5?"white":"black",
-                  padding: '4px 8px',
-                  width: '34px',
-                  display: 'inline-block',
-                  borderRadius: '50%',
-                  margin:'0 5px',
                 }}
+                className="size-label"
                 onClick={()=>{
                   this.setState({size: 1.5})
                 }}

@@ -34,3 +34,18 @@
   background-color: #009588;
   border-radius: 50%;
 }
+
+.size-label {
+  background-color: transparent;
+  color: black;
+  padding: 4px 8px;
+  width: 34px;
+  display: inline-block;
+  border-radius: 50%;
+  margin:0 5px;
+  text-align: center;
+  &.active {
+    background-color: #009588;
+    color: white;
+  }
+}
