@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import {_} from 'lodash';
+import {FlowRouter} from "meteor/kadira:flow-router"
 // import AR from 'com.wikitude.phonegap.WikitudePlugin';
 //----
 import Logger from '/imports/modules/logger';
@@ -41,7 +42,7 @@ class Home extends Component {
         <Ons.Card verticalAlign>
           <Ons.Row>
             <Ons.Col width="100%">
-              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>Menu</Ons.Button>
+              <Ons.Button onClick={()=>{FlowRouter.go("Menu")}} style={{margin: '6px'}} modifier='large quiet'>Menu</Ons.Button>
               
             </Ons.Col>
             <Ons.Col width="100%">
