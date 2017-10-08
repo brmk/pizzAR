@@ -1,0 +1,50 @@
+img.pizza-image{
+    width: 10% !important;
+}
+.order-list-item {
+    margin-bottom: 7rem;
+}
+ul {
+    list-style: none !important;
+}
+.button-approve {
+    padding: 8px;
+    font-size: 10px;
+}
+
+.button-delice{
+    padding: 8px;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.order-item {
+    line-height: 18px !important;
+}
+.item-wrapper{
+    margin-bottom: 20px;
+}
+
+.pizza-image-order {
+    width: 100% !important;
+}
+
+.order-pizzas{
+    margin-top: 25px;
+    display: inline-flex !important;
+}
+.center-text{
+    text-align: center;
+}
+
+.pizzas-status{
+    margin-left: 50px;
+}
+
+.navbar-brand{
+    line-height: 35px;
+}
+
+.btn-fullheight {
+    margin-right: 25px;
+}

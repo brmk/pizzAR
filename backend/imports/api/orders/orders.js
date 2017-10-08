@@ -1,18 +1,17 @@
 import { Mongo } from 'meteor/mongo';
-import SimpleSchema from 'simpl-schema';
 
-const Books = new Mongo.Collection('books');
+const Orders = new Mongo.Collection('orders');
 
-export default Books;
+export default Orders;
 
 
-Books.allow({
+Orders.allow({
   insert: () => false,
   update: () => false,
   remove: () => false,
 });
 
-Books.deny({
+Orders.deny({
   insert: () => true,
   update: () => true,
   remove: () => true,
