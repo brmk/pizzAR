@@ -238,7 +238,7 @@ class Menu extends Component {
                   <div>
                     <br/>
                     <br/>
-                    <Ons.Button onClick={this.renderCustomAR.bind(this)} style={{margin: '6px'}} modifier='large'>BUILD PIZZA</Ons.Button>
+                    <Ons.Button onClick={()=>{FlowRouter.go('Builder')}} style={{margin: '6px'}} modifier='large'>BUILD PIZZA</Ons.Button>
                     <br/>
                   </div>
                 </Ons.Col>
