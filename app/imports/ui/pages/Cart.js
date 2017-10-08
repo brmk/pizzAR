@@ -59,6 +59,23 @@ export default class Cart extends Component {
     );
   }
 
+  makeOrder(){
+    let order = {
+      orderedAddress: this.state.address,
+      ordererPhone: this.state.phone,
+      pizzas: this.state.pizzas,
+      orderPrice: this.calculateTotal()
+    }
+
+    Meteor.call('orders.insert', order, (err, res)=>{
+      if(err){
+        console.log(err)
+      } else{
+        Session.set('cart', [])
+      }
+    })
+  }
+
   calculateTotal(){
     let cart = this.state.pizzas;
     let total = 0;
@@ -93,7 +110,7 @@ export default class Cart extends Component {
             <Ons.Col width='100%' className='center'>
               <Ons.Input
                 value={this.state.phone}
-                onChange={this.handlePhoneChange}
+                onChange={(e)=>{this.handlePhoneChange(e)}}
                 modifier='underbar'
                 
                 placeholder='Phone' />
@@ -104,7 +121,7 @@ export default class Cart extends Component {
             <Ons.Col>
               <Ons.Input
                 value={this.state.address}
-                onChange={this.handleAddressChange}
+                onChange={(e)=>{this.handleAddressChange(e)}}
                 modifier='underbar'
                 
                 placeholder='Address' />
@@ -120,7 +137,7 @@ export default class Cart extends Component {
           <div>
             Total: {this.calculateTotal()}
           </div>
-          <Ons.Button style={{margin: '6px'}} modifier='large'>Make Order</Ons.Button>
+          <Ons.Button style={{margin: '6px'}} onClick={()=>{this.makeOrder()}} modifier='large'>Make Order</Ons.Button>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
         </Ons.Page>
       </div>
