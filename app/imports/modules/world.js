@@ -45,12 +45,7 @@ var app = {
             app.requiredFeatures,
             app.startupConfiguration
         );
-        
-        app.wikitudePlugin.onJSONObjectReceived(function(payload){
-            
-        });
 
-        app.wikitudePlugin.setOnUrlInvokeCallback(app.onURLInvoked);
 
     },
     attachJS(callback){
@@ -68,7 +63,7 @@ var app = {
     },
     // Callback if your AR experience loaded successful
     onARExperienceLoadedSuccessful: function(loadedURL)  {
-        console.log(loadedURL)
+        // app.wikitudePlugin.callJavaScript('window.World.init([\'sausage\'])');
         /* Respond to successful augmented reality experience loading if you need to */
         
 
