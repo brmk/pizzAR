@@ -41,12 +41,12 @@ export default class Builder extends Component {
   }
 
   calculatePizzaCost(){
-    let total = 10;
+    let total = 20;
 
     this.state.ingridients.forEach((ingridient)=>{
       total+=ingridientsPrices[ingridient]
     })
-    return total;
+    return (total*this.state.size).toFixed();
   }
 
   renderCustomAR(){
@@ -69,6 +69,7 @@ export default class Builder extends Component {
       size: this.state.size
     })
     Session.set('cart', cart)
+    this.setState({ingridients:[], size: 1})
     FlowRouter.go('Menu')
   }
   
@@ -97,11 +98,12 @@ export default class Builder extends Component {
           <Ons.Row verticalAlign='center' className='center'>
             <Ons.Col width='100%' className='center'>
               <div style={{textAlign:'center'}}>
+                <div>{this.calculatePizzaCost()}</div>
                 <div style={{position:'relative', display:'inline-block'}}>
                   <img className="img-responsive" style={{maxHeight: "300px"}} src='/assets/pizza-base.png'/>
                   {
                     this.state.ingridients.map((ingridient)=>{
-                      return <img className="img-responsive img-overlay" style={{maxHeight: "300px", position:'absolute', top:0, left:0}} src={`/assets/${ingridient}.png`}/>
+                      return <img key={ingridient} className="img-responsive img-overlay" style={{maxHeight: "300px", position:'absolute', top:0, left:0}} src={`/assets/${ingridient}.png`}/>
                     })
                   }
                 </div>

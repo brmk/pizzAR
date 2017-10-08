@@ -22,21 +22,21 @@ let pizzas = {
     price: 60,
     ingridients:["sause", "cheese", "ham", "mushrooms"],
     weight: 500,
-    image: "http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg"
+    image: "/assets/capriciosa.png"
   },
   margarita:{
     name: "Margarita",
     price: 30,
     ingridients:["sause", "cheese"],
     weight: 450,
-    image: "http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg"
+    image: "/assets/margarita.png"
   },
   hawaian:{
     name: "Hawaian",
     price: 65,
     ingridients: ["sause", "ham", "pineapple", "cheese"],
     weight: 550,
-    image: "http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg"
+    image: "/assets/hawaian.png"
   }
 }
 
@@ -80,13 +80,13 @@ class Menu extends Component {
         <Ons.Row>
           <Ons.Col width="50%">
             <Ons.Card verticalAlign>
-              <img className="img-responsive" src="https://image.freepik.com/free-icon/add-filled-cross-sign_318-75178.jpg"/>
+              <img className="img-responsive" src="/assets/custom.png"/>
               <Ons.Row>
                 <Ons.Col width="100%">
                   <div>
                     <br/>
                     <br/>
-                    <Ons.Button onClick={()=>{FlowRouter.go('Builder')}} style={{margin: '6px'}} modifier='large'>BUILD PIZZA</Ons.Button>
+                    <Ons.Button onClick={()=>{FlowRouter.go('Builder')}} style={{margin: '33px auto'}} modifier='large'>BUILD PIZZA</Ons.Button>
                     <br/>
                   </div>
                 </Ons.Col>
@@ -102,9 +102,8 @@ class Menu extends Component {
                     <Ons.Col width="80%">
                       <div>
                         <h3>{pizza.name}</h3>
-                        <h5>{pizza.price} UAH</h5>
-                        <h5>{pizza.weight} g</h5>
-                        
+                        <h5>{pizza.price*this.state.sizes[key]} UAH</h5>
+                        <h5>{pizza.weight*this.state.sizes[key]} g</h5>
                       </div>
                     </Ons.Col>
                     <Ons.Col width="20%">
@@ -168,8 +167,6 @@ class Menu extends Component {
               </Ons.Col>
             )
           })}
-
-          
         </Ons.Row>
         
 

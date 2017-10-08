@@ -42,14 +42,14 @@ export default class Home extends Component {
         <Ons.Page>
           <Ons.Card verticalAlign modifier="material">
             <Ons.Row>
-              <img className="brand-logo" src="http://via.placeholder.com/360x150"/>
+              <img className="brand-logo" src="/assets/logo.png"/>
             </Ons.Row>
             <Ons.Row>
               <Ons.Col width="100%">
                 <Ons.Button onClick={()=>{FlowRouter.go("Menu")}} style={{margin: '6px'}} modifier='large'>Menu</Ons.Button>
                 
               </Ons.Col>
-              <Ons.Col width="100%">
+              {/*<Ons.Col width="100%">
                 <Ons.Button style={{margin: '6px'}} modifier='large'>Favourites</Ons.Button>
                 
               </Ons.Col>
@@ -57,8 +57,9 @@ export default class Home extends Component {
                 <Ons.Button style={{margin: '6px'}} modifier='large'>My Orders</Ons.Button>
                 
               </Ons.Col>
+              */}
               <Ons.Col width="100%">
-                <Ons.Button style={{margin: '6px'}} modifier='large'>About</Ons.Button>
+                <Ons.Button style={{margin: '6px'}} modifier='large' onClick={()=>{alert('Ta Da. Made by Spaceship Innovations')}}>About</Ons.Button>
                 
               </Ons.Col>
             </Ons.Row>
