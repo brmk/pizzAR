@@ -61,7 +61,7 @@ class Menu extends Component {
         <div className='center'>Menu</div>
         <div className='right' style={{marginRight: "20px"}}>
           <Ons.Icon onClick={()=>{
-            //GO TO CART HERE
+            FlowRouter.go('Cart')
           }} icon='fa-shopping-cart' size={30}/>
         </div>
       </Ons.Toolbar>
@@ -131,10 +131,12 @@ class Menu extends Component {
                           cart = []
                         }
                         cart.push({
+                          id: Meteor.uuid(),
                           name: pizza.name,
                           price: pizza.price * this.state.sizes[key],
                           weight: pizza.weight * this.state.sizes[key],
-                          img: pizza.image
+                          img: pizza.image,
+                          size: this.state.sizes[key]
                         })
                         Session.set('cart', cart)
                         console.log(cart)
