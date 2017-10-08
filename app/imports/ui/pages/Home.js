@@ -38,7 +38,7 @@ class Home extends Component {
   render(){
     return (
       <div className="Home">
-        <Ons.Page renderToolbar={this.renderToolbar}>
+        <Ons.Page>
           <Ons.Card verticalAlign modifier="material">
             <Ons.Row>
               <img className="brand-logo" src="http://via.placeholder.com/360x150"/>
