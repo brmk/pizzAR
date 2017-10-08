@@ -98,7 +98,7 @@ export default class Builder extends Component {
           <Ons.Row verticalAlign='center' className='center'>
             <Ons.Col width='100%' className='center'>
               <div style={{textAlign:'center'}}>
-                <div>{this.calculatePizzaCost()}</div>
+                <div className='pizza-price'>{this.calculatePizzaCost() + ' UAH'}</div>
                 <div style={{position:'relative', display:'inline-block'}}>
                   <img className="img-responsive" style={{maxHeight: "300px"}} src='/assets/pizza-base.png'/>
                   {
