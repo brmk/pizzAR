@@ -14,7 +14,8 @@ var app = {
         "camera_position": "back"
     },
     // Application Constructor
-    initialize: function() {
+    initialize: function(onRender) {
+        app.onRender = onRender;
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -28,9 +29,15 @@ var app = {
     onDeviceReady: function() {
         app.wikitudePlugin = cordova.require("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin");
         app.wikitudePlugin.isDeviceSupported(app.onDeviceSupported, app.onDeviceNotSupported, app.requiredFeatures);
+        app.wikitudePlugin.setJSONObjectReceivedCallback(app.onJSONObjectReceived);
+    },
+    onJSONObjectReceived: function(payload) {
+        console.log(payload)
+        alert(JSON.stringify(payload))
     },
     // Callback if the device supports all required features
     onDeviceSupported: function() {
+
         app.wikitudePlugin.loadARchitectWorld(
             app.onARExperienceLoadedSuccessful,
             app.onARExperienceLoadError,
@@ -38,6 +45,22 @@ var app = {
             app.requiredFeatures,
             app.startupConfiguration
         );
+        
+        app.wikitudePlugin.onJSONObjectReceived(function(payload){
+            
+        });
+
+        app.wikitudePlugin.setOnUrlInvokeCallback(app.onURLInvoked);
+
+    },
+    attachJS(callback){
+        
+    },
+    onURLInvoked: function(url) {
+
+    // TODO: impl. url parsing to know what to do with the given url.
+
+        app.wikitudePlugin.close();
     },
     // Callback if the device does not support all required features
     onDeviceNotSupported: function(errorMessage) {
@@ -45,7 +68,12 @@ var app = {
     },
     // Callback if your AR experience loaded successful
     onARExperienceLoadedSuccessful: function(loadedURL)  {
+        console.log(loadedURL)
         /* Respond to successful augmented reality experience loading if you need to */
+        
+
+        // console.log(app.onRender)
+        // app.attachJS(app.onRender)
     },
     // Callback if your AR experience did not load successful
     onARExperienceLoadError: function(errorMessage) {

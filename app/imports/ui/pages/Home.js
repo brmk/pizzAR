@@ -8,7 +8,6 @@ import {FlowRouter} from "meteor/kadira:flow-router"
 // import AR from 'com.wikitude.phonegap.WikitudePlugin';
 //----
 import Logger from '/imports/modules/logger';
-import WorldInit from '/imports/modules/world';
 //----
 // const AR = window.WikitudePlugin;
 import OnsenUI from 'onsenui';

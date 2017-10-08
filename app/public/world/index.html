@@ -6,7 +6,7 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
 
   <title></title>
-
+  
   <script src="https://www.wikitude.com/libs/architect.js"></script>
   <!-- <script type="text/javascript" src="../ade.js"></script> -->
 
@@ -14,9 +14,16 @@
 </head>
 
 <body>
-  <div id="loadingMessage" class="info">Loading ...</div>
+  <div id="loadingMessage" class="info">Loading...</div>
+  <button value="Close" type="button" onclick="sendCloseARViewRequest()">Close</button>
 
   <script>
+    function sendCloseARViewRequest()
+    {
+        // hideButton?status=hide could be anything, you just have to know what to do with the url in the PhoneGap world.
+        document.location = 'architectsdk://hideButton?status=hide';
+    }
+
     var World = {
       loaded: false,
 
@@ -68,6 +75,10 @@
                   alert(errorMessage);
                 }
         });
+
+
+
+        
       },
 
       removeLoadingBar: function() {
@@ -84,11 +95,19 @@
         document.getElementById('loadingMessage').innerHTML =
           "<div" + cssDivLeft + ">Scan Target &#35;1 (surfer):</div>" +
           "<div" + cssDivRight + "><img src='assets/surfer.png'></img></div>";
+        setTimeout(()=>{
+          AR.platform.sendJSONObject({
+              additions: ['salame', 'cheese']
+          })
+
+
+        }, 3000);
+        
+
       }
     };
 
     World.init();
-    console.log('init')
 
   </script>
 </body>
