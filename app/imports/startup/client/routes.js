@@ -8,6 +8,7 @@ import App from '../../ui/layouts/App';
 import Home from '../../ui/pages/Home';
 import Menu from '../../ui/pages/Menu';
 import Cart from '../../ui/pages/Cart';
+import Builder from '../../ui/pages/Builder';
 
 
 FlowRouter.route('/', {
@@ -33,6 +34,15 @@ FlowRouter.route('/cart', {
 	action() {
 		mount(App, {
 			main: (<Cart />)
+		});
+	}
+});
+
+FlowRouter.route('/builder', {
+	name: 'Builder',
+	action() {
+		mount(App, {
+			main: (<Builder />)
 		});
 	}
 });

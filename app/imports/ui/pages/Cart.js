@@ -51,6 +51,17 @@ export default class Cart extends Component {
         </div>
         <div className='center'>
           {row.name}
+          
+          {row.name=='Custom'?
+            <div>
+              {`  | Ingridients: `}
+              {row.ingridients.map((ingridient)=>{
+                return (<span key={ingridient}>{`${ingridient}${" "}`}</span>)
+              })}
+            </div>
+            
+          :''
+          }
         </div>
         <div className='right'>
           {sizes[row.size]}
