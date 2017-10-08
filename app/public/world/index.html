@@ -45,15 +45,16 @@
           The next step is to create the augmentation. In this example an image resource is created and passed to the AR.ImageDrawable. A drawable is a visual component that can be connected to an IR target (AR.ImageTrackable) or a geolocated object (AR.GeoObject). The AR.ImageDrawable is initialized by the image and its size. Optional parameters allow for position it relative to the recognized target.
         */
 
-        /* Create overlay for page one */
-        var imgOne = new AR.ImageResource("http://192.168.101.140:3000/assets/imageOne.png");
+        const startScale = 1.7;
         
-        var overlayOne = new AR.ImageDrawable(imgOne, 2, {
-          translate: {
-            
-          }
+        /* Create overlay for page one */
+        var imgOne = new AR.ImageResource("http://192.168.101.140:3000/assets/pizza-base.png");
+        
+        var overlayOne = new AR.ImageDrawable(imgOne, 1.7);
 
-        });
+        var imgTwo = new AR.ImageResource("http://192.168.101.140:3000/assets/ham.png");
+        
+        var overlayTwo = new AR.ImageDrawable(imgTwo, 1.7);
 
         /*
           The last line combines everything by creating an AR.ImageTrackable with the previously created tracker, the name of the image target and the drawable that should augment the recognized image.
@@ -61,7 +62,7 @@
         */
         var pageOne = new AR.ImageTrackable(this.tracker, "*", {
           drawables: {
-            cam: overlayOne
+            cam: [overlayOne,overlayTwo]
           },
           onImageRecognized: this.removeLoadingBar,
                 onError: function(errorMessage) {
@@ -92,7 +93,7 @@
     };
 
     alert('initializing')
-    World.init();
+    // World.init();
 
   </script>
 

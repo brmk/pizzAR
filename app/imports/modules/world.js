@@ -14,8 +14,7 @@ var app = {
         "camera_position": "back"
     },
     // Application Constructor
-    initialize: function(onRender) {
-        app.onRender = onRender;
+    initialize: function() {
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -63,12 +62,8 @@ var app = {
     },
     // Callback if your AR experience loaded successful
     onARExperienceLoadedSuccessful: function(loadedURL)  {
-        // app.wikitudePlugin.callJavaScript('window.World.init([\'sausage\'])');
-        /* Respond to successful augmented reality experience loading if you need to */
-        
+        app.wikitudePlugin.callJavaScript('window.World.init([\'sausage\'])');
 
-        // console.log(app.onRender)
-        // app.attachJS(app.onRender)
     },
     // Callback if your AR experience did not load successful
     onARExperienceLoadError: function(errorMessage) {
