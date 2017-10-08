@@ -38,29 +38,35 @@ class Home extends Component {
 
   render(){
     return (
-      <Ons.Page renderToolbar={this.renderToolbar}>
-        <Ons.Card verticalAlign>
-          <Ons.Row>
-            <Ons.Col width="100%">
-              <Ons.Button onClick={()=>{FlowRouter.go("Menu")}} style={{margin: '6px'}} modifier='large quiet'>Menu</Ons.Button>
-              
-            </Ons.Col>
-            <Ons.Col width="100%">
-              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>Favourites</Ons.Button>
-              
-            </Ons.Col>
-            <Ons.Col width="100%">
-              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>My Orders</Ons.Button>
-              
-            </Ons.Col>
-            <Ons.Col width="100%">
-              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>About</Ons.Button>
-              
-            </Ons.Col>
-          </Ons.Row>
-        </Ons.Card>
-        {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
-      </Ons.Page>
+
+      <div className="Home">
+        <Ons.Page renderToolbar={this.renderToolbar}>
+          <Ons.Card verticalAlign modifier="material">
+            <Ons.Row>
+              <img className="brand-logo" src="http://via.placeholder.com/360x150"/>
+            </Ons.Row>
+            <Ons.Row>
+              <Ons.Col width="100%">
+                <Ons.Button onClick={()=>{FlowRouter.go("Menu")}} style={{margin: '6px'}} modifier='large'>Menu</Ons.Button>
+                
+              </Ons.Col>
+              <Ons.Col width="100%">
+                <Ons.Button style={{margin: '6px'}} modifier='large'>Favourites</Ons.Button>
+                
+              </Ons.Col>
+              <Ons.Col width="100%">
+                <Ons.Button style={{margin: '6px'}} modifier='large'>My Orders</Ons.Button>
+                
+              </Ons.Col>
+              <Ons.Col width="100%">
+                <Ons.Button style={{margin: '6px'}} modifier='large'>About</Ons.Button>
+                
+              </Ons.Col>
+            </Ons.Row>
+          </Ons.Card>
+          {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
+        </Ons.Page>
+      </div>
     );
   }
 }
