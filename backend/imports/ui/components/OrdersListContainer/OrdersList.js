@@ -89,7 +89,7 @@ export default class OrderList extends Component {
                       order.status === 'approved' ? 'Approved' : order.status === 'deliced' ? 'Deliced' :
                         <div>
                           <button type="button" className="btn btn-primary button-approve" onClick={this.approveOrder.bind(order)}>Approve</button>
-                          <button type="button" className="btn btn-danger button-delice" onClick={this.deliceOrder.bind(order)}>Delice</button>
+                          <button type="button" className="btn btn-danger button-delice" onClick={this.deliceOrder.bind(order)}>Decline</button>
                         </div>
                     }
 

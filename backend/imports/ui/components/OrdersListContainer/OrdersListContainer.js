@@ -85,7 +85,7 @@ class OrdersListContainer extends Component {
                   <li><a onClick={this.handleItemClick.bind(this)} href="#" className="small" data-value="approved"
                          tabIndex="-1"><input type="checkbox"/>&nbsp;Approved</a></li>
                   <li><a onClick={this.handleItemClick.bind(this)} href="#" className="small" data-value="deliced"
-                         tabIndex="-1"><input type="checkbox"/>&nbsp;Deliced</a></li>
+                         tabIndex="-1"><input type="checkbox"/>&nbsp;Declined</a></li>
                 </div>
               </ul>
             </div>

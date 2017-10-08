@@ -84,7 +84,7 @@ export default class Cart extends Component {
 
   makeOrder(){
     let order = {
-      orderedAddress: this.state.address,
+      ordererAddress: this.state.address,
       ordererPhone: this.state.phone,
       pizzas: this.state.pizzas,
       orderPrice: this.calculateTotal()
@@ -98,6 +98,8 @@ export default class Cart extends Component {
         console.log(err)
       } else{
         Session.set('cart', [])
+        history.back();
+        alert('Thank you for your order. Wait for a call');
       }
     })
   }
@@ -165,7 +167,7 @@ export default class Cart extends Component {
             renderHeader={() => <Ons.ListHeader>Cart</Ons.ListHeader>}
           />
           <div>
-            Total: {this.calculateTotal()}
+            Total: {this.calculateTotal()} UAH
           </div>
           <Ons.Button style={{margin: '6px'}} onClick={()=>{this.makeOrder()}} modifier='large'>Make Order</Ons.Button>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}

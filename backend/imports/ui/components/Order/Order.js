@@ -96,7 +96,7 @@ class Order extends Component {
             </ul>
             <div className="pizzas-status">
             {
-              order.status === 'approved' ? <div>Approved</div> : order.status === 'deliced' ? <div>Deliced</div> :
+              order.status === 'approved' ? <div>Approved</div> : order.status === 'deliced' ? <div>Declined</div> :
                 <div>
                   <button type="button" className="btn btn-primary button-approve" onClick={this.approveOrder.bind(order)}>Approve</button>
                   <button type="button" className="btn btn-danger button-delice" onClick={this.deliceOrder.bind(order)}>Delice</button>
