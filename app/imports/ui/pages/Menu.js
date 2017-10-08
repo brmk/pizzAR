@@ -55,7 +55,10 @@ class Menu extends Component {
   renderToolbar() {
     return (
       <Ons.Toolbar>
-        <div className='center'>PizzAR</div>
+        <div className='left'>
+          <Ons.BackButton onClick={()=>{history.back()}}>Back</Ons.BackButton>
+        </div>
+        <div className='center'>Menu</div>
       </Ons.Toolbar>
     );
   }
