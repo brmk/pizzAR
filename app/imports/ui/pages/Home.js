@@ -26,7 +26,7 @@ class Home extends Component {
   renderToolbar() {
     return (
       <Ons.Toolbar>
-        <div className='center'>Onsen UI</div>
+        <div className='center'>PizzAR</div>
       </Ons.Toolbar>
     );
   }
@@ -38,7 +38,27 @@ class Home extends Component {
   render(){
     return (
       <Ons.Page renderToolbar={this.renderToolbar}>
-        <p>This is Onsen UI!</p>
+        <Ons.Card verticalAlign>
+          <Ons.Row>
+            <Ons.Col width="100%">
+              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>Menu</Ons.Button>
+              
+            </Ons.Col>
+            <Ons.Col width="100%">
+              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>Favourites</Ons.Button>
+              
+            </Ons.Col>
+            <Ons.Col width="100%">
+              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>My Orders</Ons.Button>
+              
+            </Ons.Col>
+            <Ons.Col width="100%">
+              <Ons.Button style={{margin: '6px'}} modifier='large quiet'>About</Ons.Button>
+              
+            </Ons.Col>
+          </Ons.Row>
+        </Ons.Card>
+        {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
       </Ons.Page>
     );
   }

@@ -12,7 +12,6 @@
     "bcrypt": "^1.0.2",
     "bootstrap": "^3.3.7",
     "com.wikitude.phonegap.WikitudePlugin": "https://github.com/Wikitude/wikitude-cordova-plugin.git",
-    "com.wikitude.phonegap.wikitudeplugin": "git+https://github.com/Wikitude/wikitude-cordova-plugin.git",
     "cordova": "^7.0.1",
     "core-js": "^2.5.0",
     "jquery": "^2.2.4",
