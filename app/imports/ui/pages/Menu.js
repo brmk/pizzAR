@@ -48,7 +48,7 @@ class Menu extends Component {
     return (
       <Ons.Toolbar>
         <div className='left'>
-          <Ons.BackButton onClick={()=>{FlowRouter.go('Home')}}>Back</Ons.BackButton>
+          <Ons.BackButton onClick={()=>{history.back()}}>Back</Ons.BackButton>
         </div>
         <div className='center'>Menu</div>
       </Ons.Toolbar>
