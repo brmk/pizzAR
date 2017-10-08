@@ -78,7 +78,10 @@ export default class Cart extends Component {
       orderPrice: this.calculateTotal()
     }
 
-    Meteor.call('orders.insert', order, (err, res)=>{
+    let remoteUrl = 'http://localhost:3030'
+    let remote = DDP.connect(remoteUrl);
+
+    remote.call('orders.insert', order, (err, res)=>{
       if(err){
         console.log(err)
       } else{
