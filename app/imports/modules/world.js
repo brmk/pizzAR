@@ -14,8 +14,8 @@ var app = {
         "camera_position": "back"
     },
     // Application Constructor
-    initialize: function(onRender) {
-        app.onRender = onRender;
+    initialize: function(data) {
+        app.data = data;
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -32,8 +32,7 @@ var app = {
         app.wikitudePlugin.setJSONObjectReceivedCallback(app.onJSONObjectReceived);
     },
     onJSONObjectReceived: function(payload) {
-        console.log(payload)
-        alert(JSON.stringify(payload))
+        // alert(JSON.stringify(payload))
     },
     // Callback if the device supports all required features
     onDeviceSupported: function() {
@@ -45,12 +44,7 @@ var app = {
             app.requiredFeatures,
             app.startupConfiguration
         );
-        
-        app.wikitudePlugin.onJSONObjectReceived(function(payload){
-            
-        });
 
-        app.wikitudePlugin.setOnUrlInvokeCallback(app.onURLInvoked);
 
     },
     attachJS(callback){
@@ -64,20 +58,16 @@ var app = {
     },
     // Callback if the device does not support all required features
     onDeviceNotSupported: function(errorMessage) {
-        alert(errorMessage);
+        // alert(errorMessage);
     },
     // Callback if your AR experience loaded successful
     onARExperienceLoadedSuccessful: function(loadedURL)  {
-        console.log(loadedURL)
-        /* Respond to successful augmented reality experience loading if you need to */
-        
+        app.wikitudePlugin.callJavaScript(`window.World.init(${JSON.stringify(app.data)})`);
 
-        // console.log(app.onRender)
-        // app.attachJS(app.onRender)
     },
     // Callback if your AR experience did not load successful
     onARExperienceLoadError: function(errorMessage) {
-        alert('Loading AR web view failed: ' + errorMessage);
+        // alert('Loading AR web view failed: ' + errorMessage);
     }
 
 };
