@@ -64,6 +64,7 @@ export default class Builder extends Component {
       size: this.state.size
     })
     Session.set('cart', cart)
+    this.setState({ingridients:[], size: 1})
     FlowRouter.go('Menu')
   }
   
