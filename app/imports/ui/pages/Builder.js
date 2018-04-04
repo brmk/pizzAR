@@ -74,32 +74,12 @@ export default class Builder extends Component {
     this.renderCustomAR();
   }
 
-  addToCart(){
-    let cart = Session.get('cart');
-    if(!Array.isArray(cart)){
-      cart = []
-    }
-    cart.push({
-      id: Meteor.uuid(),
-      name: 'Custom',
-      ingridients: this.state.ingridients,
-      price: this.calculatePizzaCost(),
-      weight: 500,
-      img: 'http://www.seriouseats.com/images/2017/04/20170411-pizza-oven-testing-roccbox-top.jpg',
-      size: this.state.size
-    })
-    Session.set('cart', cart)
-    this.setState({ingridients:[], size: 1})
-    FlowRouter.go('Menu')
-  }
+ 
   
   renderToolbar() {
     return (
       <Ons.Toolbar>
-        <div className='left'>
-          <Ons.BackButton onClick={()=>{history.back()}}>Back</Ons.BackButton>
-        </div>
-        <div className='center'>Builder</div>
+        <div className='center'>PizzAR</div>
       </Ons.Toolbar>
     );
   }
@@ -219,9 +199,8 @@ export default class Builder extends Component {
             
           </Ons.Row>
 
-          <div style={{marginTop:'35px'}}>
-            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.showTutorial()}} modifier='large'>See live</Ons.Button>
-            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.addToCart()}} modifier='large'>Add to cart</Ons.Button>
+          <div style={{margin:'6px', marginTop:'35px'}}>
+            <Ons.Button  onClick={()=>{this.showTutorial()}} modifier='large'>See live</Ons.Button>
           </div>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}
         </Ons.Page>

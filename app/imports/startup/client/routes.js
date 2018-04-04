@@ -11,34 +11,16 @@ import Cart from '../../ui/pages/Cart';
 import Builder from '../../ui/pages/Builder';
 
 
+// FlowRouter.route('/', {
+// 	name: 'Home',
+// 	action() {
+// 		mount(App, {
+// 			main: (<Home />)
+// 		});
+// 	}
+// });
+
 FlowRouter.route('/', {
-	name: 'Home',
-	action() {
-		mount(App, {
-			main: (<Home />)
-		});
-	}
-});
-
-FlowRouter.route('/menu', {
-	name: 'Menu',
-	action() {
-		mount(App, {
-			main: (<Menu />)
-		});
-	}
-});
-
-FlowRouter.route('/cart', {
-	name: 'Cart',
-	action() {
-		mount(App, {
-			main: (<Cart />)
-		});
-	}
-});
-
-FlowRouter.route('/builder', {
 	name: 'Builder',
 	action() {
 		mount(App, {
@@ -46,6 +28,33 @@ FlowRouter.route('/builder', {
 		});
 	}
 });
+
+// FlowRouter.route('/menu', {
+// 	name: 'Menu',
+// 	action() {
+// 		mount(App, {
+// 			main: (<Menu />)
+// 		});
+// 	}
+// });
+
+// FlowRouter.route('/cart', {
+// 	name: 'Cart',
+// 	action() {
+// 		mount(App, {
+// 			main: (<Cart />)
+// 		});
+// 	}
+// });
+
+// FlowRouter.route('/builder', {
+// 	name: 'Builder',
+// 	action() {
+// 		mount(App, {
+// 			main: (<Builder />)
+// 		});
+// 	}
+// });
 
 
 // not found template

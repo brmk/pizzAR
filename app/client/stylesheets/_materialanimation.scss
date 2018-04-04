@@ -1,128 +1,128 @@
-@keyframes spring {
-  0% {
-    letter-spacing: 0;
-  }
+// @keyframes spring {
+//   0% {
+//     letter-spacing: 0;
+//   }
   
-  20% {
-    letter-spacing: .2em;
-  }
-    40% {
-    letter-spacing: .4em;
-  }
-        66% {
-    letter-spacing: .5em;
-  }
-        80% {
-    letter-spacing: .7em;
-  }
-  100% {
-    letter-spacing: 0;
-  }
-}
-@keyframes spring2 {
-  0% {
-    letter-spacing: .5em;
-  }
+//   20% {
+//     letter-spacing: .2em;
+//   }
+//     40% {
+//     letter-spacing: .4em;
+//   }
+//         66% {
+//     letter-spacing: .5em;
+//   }
+//         80% {
+//     letter-spacing: .7em;
+//   }
+//   100% {
+//     letter-spacing: 0;
+//   }
+// }
+// @keyframes spring2 {
+//   0% {
+//     letter-spacing: .5em;
+//   }
   
-  70% {
-    letter-spacing: 0;
-  }
+//   70% {
+//     letter-spacing: 0;
+//   }
   
-  100% {
-    letter-spacing: .5em;
-  }
-}
-@keyframes spring3 {
-  0% {
-    letter-spacing: .3em;
-  }
+//   100% {
+//     letter-spacing: .5em;
+//   }
+// }
+// @keyframes spring3 {
+//   0% {
+//     letter-spacing: .3em;
+//   }
   
-  30% {
-    letter-spacing: .2em;
-  }
-    40% {
-    letter-spacing: .2em;
-  }
-        70% {
-    letter-spacing: .6em;
-  }
-  100% {
-    letter-spacing: .3em;
-  }
-}
-@keyframes spring4 {
-  0% {
-    letter-spacing: 1.1em;
-  }
+//   30% {
+//     letter-spacing: .2em;
+//   }
+//     40% {
+//     letter-spacing: .2em;
+//   }
+//         70% {
+//     letter-spacing: .6em;
+//   }
+//   100% {
+//     letter-spacing: .3em;
+//   }
+// }
+// @keyframes spring4 {
+//   0% {
+//     letter-spacing: 1.1em;
+//   }
   
-  38% {
-    letter-spacing: .3em;
-  }
+//   38% {
+//     letter-spacing: .3em;
+//   }
   
-  100% {
-    letter-spacing: 1.1em;
-  }
-}
+//   100% {
+//     letter-spacing: 1.1em;
+//   }
+// }
 
 
 
-.move0 {
+// .move0 {
   
-  margin: 0;
-  padding-left: 0;
-  line-height: 1;
-  animation: spring 160s ease;
-  animation-iteration-count: 10;
-}
-.move1 {
-  animation: spring2 150s ease;
-  animation-iteration-count: 10;
-}
-.move2 {
-  animation: spring2 190s ease;
-  animation-iteration-count: 10;
-}
-.move3 {
-  animation: spring3 170s ease;
-  animation-iteration-count: 10;
-}
+//   margin: 0;
+//   padding-left: 0;
+//   line-height: 1;
+//   animation: spring 160s ease;
+//   animation-iteration-count: 10;
+// }
+// .move1 {
+//   animation: spring2 150s ease;
+//   animation-iteration-count: 10;
+// }
+// .move2 {
+//   animation: spring2 190s ease;
+//   animation-iteration-count: 10;
+// }
+// .move3 {
+//   animation: spring3 170s ease;
+//   animation-iteration-count: 10;
+// }
 
-.move4 {
-  animation: spring3 202s ease;
-  animation-iteration-count: 10;
-}
-.move5 {
-  animation: spring4 160s ease;
-  animation-iteration-count: 10;
-}
-
-
-.rtl {
-  direction: rtl;
-  color: white;
-}
+// .move4 {
+//   animation: spring3 202s ease;
+//   animation-iteration-count: 10;
+// }
+// .move5 {
+//   animation: spring4 160s ease;
+//   animation-iteration-count: 10;
+// }
 
 
-.materialhead {
-  width: 100%;
-  max-width: 100%;
+// .rtl {
+//   direction: rtl;
+//   color: white;
+// }
 
-  a{
-    color: black;
-    text-decoration: none;
-  }
-  a::hover{
-    text-decoration: none;
-    color: red;
-  }
 
-  h1{
-    font-size: 4.0rem;
-  }
-}
+// .materialhead {
+//   width: 100%;
+//   max-width: 100%;
+
+//   a{
+//     color: black;
+//     text-decoration: none;
+//   }
+//   a::hover{
+//     text-decoration: none;
+//     color: red;
+//   }
+
+//   h1{
+//     font-size: 4.0rem;
+//   }
+// }
   
-.materialhead:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-}
+// .materialhead:after {
+//   content: "";
+//   display: inline-block;
+//   width: 100%;
+// }

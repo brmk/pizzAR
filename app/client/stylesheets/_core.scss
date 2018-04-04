@@ -1,56 +1,56 @@
-body {
-  font-family: "CC Material", serif;
-  font-size: 1em;
-}
+// body {
+//   font-family: "CC Material", serif;
+//   font-size: 1em;
+// }
 
-header,nav, section,article,footer {
-  margin: 5px;
-  padding: 8px;
-}
+// header,nav, section,article,footer {
+//   margin: 5px;
+//   padding: 8px;
+// }
 
-header{
-  @import "_materialanimation.scss";
-  position: absolute;
-  top: -30px;
-  z-index: 9001;
-}
+// header{
+//   @import "_materialanimation.scss";
+//   position: absolute;
+//   top: -30px;
+//   z-index: 9001;
+// }
 
-nav ul{
-  margin: 0 ;
-  padding: 0  ;
-} 
+// nav ul{
+//   margin: 0 ;
+//   padding: 0  ;
+// } 
 
-nav ul li {
-  display: inline-block;
-  margin: 5px;
-}
+// nav ul li {
+//   display: inline-block;
+//   margin: 5px;
+// }
 
-aside  {
-  float: right;
-}
+// aside  {
+//   float: right;
+// }
 
-h1,h2,h3,h4{
-  color: #000;
-}
+// h1,h2,h3,h4{
+//   color: #000;
+// }
 
-table{
-  margin: 5px;
-}
-.submit{
+// table{
+//   margin: 5px;
+// }
+// .submit{
   
-  a{
-    text-decoration: none;
-    background-color: #000;
-    font-size: 24px;
-    border-radius: 0;
-    padding: 12px 36px;
-  }
+//   a{
+//     text-decoration: none;
+//     background-color: #000;
+//     font-size: 24px;
+//     border-radius: 0;
+//     padding: 12px 36px;
+//   }
   
-  .add-to-cart{
-    color: #fff;
-  }
-  .sold-out{
-    color: #fff;
-  }
-}
+//   .add-to-cart{
+//     color: #fff;
+//   }
+//   .sold-out{
+//     color: #fff;
+//   }
+// }
 
