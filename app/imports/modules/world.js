@@ -1,9 +1,14 @@
 import {Meteor} from 'meteor/meteor';
+getLocalPath = function(file) {
+    // console.log(file)
+    let path = Meteor.absoluteUrl(file);
+    return path;
+};
 
 var app = {
 
     // Url/Path to the augmented reality experience you would like to load
-    arExperienceUrl: "http://192.168.101.140:3000/world/index.html",
+    arExperienceUrl: getLocalPath("world/index.html"),
     // The features your augmented reality experience requires, only define the ones you really need
     requiredFeatures: [ "image_tracking" ],
     // Represents the device capability of launching augmented reality experiences with specific features
@@ -62,12 +67,15 @@ var app = {
     },
     // Callback if your AR experience loaded successful
     onARExperienceLoadedSuccessful: function(loadedURL)  {
-        app.wikitudePlugin.callJavaScript(`window.World.init(${JSON.stringify(app.data)})`);
-
+      // console.log("wikitude: onARExperienceLoadedSuccessful");
+      const data = Object.assign({}, app.data, {
+        baseUrl: Meteor.absoluteUrl()
+      });
+      app.wikitudePlugin.callJavaScript(`window.World.init(${JSON.stringify(data)})`);
     },
     // Callback if your AR experience did not load successful
     onARExperienceLoadError: function(errorMessage) {
-        // alert('Loading AR web view failed: ' + errorMessage);
+        alert('Loading AR web view failed: ' + errorMessage);
     }
 
 };

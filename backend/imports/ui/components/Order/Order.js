@@ -27,6 +27,10 @@ class Order extends Component {
     return this.replaceAll(pizzaIngridients.join(), ',', ', ');
   }
 
+  getNormalSize(size) {
+    return size === 0.7 ? 'S' : size === 1 ? 'M' : size === 1.5 ? 'L' : null;
+  }
+
   approveOrder() {
     let orderId = this._id;
     Meteor.call('orders.update', {orderId, status: 'approved'}, (err, res) => {
@@ -81,6 +85,9 @@ class Order extends Component {
                         </li>
                         <li className="center-text">
                           Weight: {pizza.weight}
+                        </li>
+                        <li className="center-text">
+                          Size: {this.getNormalSize(pizza.size)}
                         </li>
                         {pizza.ingridients ?
                           <li className="center-text">

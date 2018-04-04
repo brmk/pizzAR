@@ -36,7 +36,8 @@ export default class Builder extends Component {
     super(props);
     this.state = {
       ingridients: [],
-      size: 1
+      size: 1,
+      isOpen: false
     };
   }
 
@@ -51,7 +52,26 @@ export default class Builder extends Component {
 
   renderCustomAR(){
     const {ingridients, size} = this.state;
+
+    console.log(ingridients)
     WorldInit.initialize({ingridients, size});
+  }
+
+  showTutorial(){
+    this.setState({isOpen: true});
+    return;
+
+    if(Session.get('skipTutorial')){
+      this.renderCustomAR();
+    } else {
+      this.setState({isOpen: true});
+    }
+  }
+
+  skipTutorial(){
+    Session.set('skipTutorial', true);
+    this.setState({isOpen: false});
+    this.renderCustomAR();
   }
 
   addToCart(){
@@ -94,7 +114,35 @@ export default class Builder extends Component {
 
 
       <div className="Builder">
-        <Ons.Page renderToolbar={this.renderToolbar}>
+        <Ons.Page 
+          renderToolbar={this.renderToolbar}
+          renderModal={() => (
+            <Ons.Modal
+              isOpen={this.state.isOpen}
+            >
+              <section style={{margin: '16px'}} className="tutorial">
+                <p>
+                  1. Download the magic paper clicking on it below and print on A4
+                </p>
+                <a href="https://imgur.com/a/QqnU0">
+                  <img src="/assets/magic-paper.png"/>
+                </a> 
+                <p>
+                  2. Fold it equally in the middle by the line
+                </p>
+                <p>
+                  3. Point your camera and enjoy
+                </p>
+                <p>
+                  <Ons.Button modifier='large' onClick={() => this.skipTutorial()}>
+                    Go!
+                  </Ons.Button>
+                </p>
+              </section>
+            </Ons.Modal>
+          )}
+        >
+
           <Ons.Row verticalAlign='center' className='center'>
             <Ons.Col width='100%' className='center'>
               <div style={{textAlign:'center'}}>
@@ -172,7 +220,7 @@ export default class Builder extends Component {
           </Ons.Row>
 
           <div style={{marginTop:'35px'}}>
-            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.renderCustomAR()}} modifier='large'>See live</Ons.Button>
+            <Ons.Button style={{margin: '6px'}} onClick={()=>{this.showTutorial()}} modifier='large'>See live</Ons.Button>
             <Ons.Button style={{margin: '6px'}} onClick={()=>{this.addToCart()}} modifier='large'>Add to cart</Ons.Button>
           </div>
           {/*<Ons.Button onClick={()=>{WorldInit.initialize()}}>Hello</Ons.Button>*/}

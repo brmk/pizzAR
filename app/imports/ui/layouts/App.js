@@ -39,7 +39,6 @@ export default class App extends React.Component {
   }
 
   renderPage(route, navigator) {
-    console.log(route)
     const routes = {
       Home,
       Menu
@@ -47,7 +46,6 @@ export default class App extends React.Component {
 
     const component = routes[route.key];
 
-    console.log(component)
     return component
     return (
       <component 

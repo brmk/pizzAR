@@ -120,8 +120,8 @@ class Menu extends Component {
                           img: pizza.image,
                           size: this.state.sizes[key]
                         })
-                        Session.set('cart', cart)
-                        console.log(cart)
+                        Session.set('cart', cart);
+                        alert('Item added to cart')
                       }} icon='fa-shopping-cart' size={30}/>
                     </Ons.Col>
                   </Ons.Row>

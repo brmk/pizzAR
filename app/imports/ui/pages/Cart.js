@@ -43,7 +43,6 @@ export default class Cart extends Component {
   }
 
   renderRow(row, self) {
-    console.log(row, self)
     let quantity = row.quantity || 1;
     return (
       <Ons.ListItem key={row.id}>
@@ -90,16 +89,16 @@ export default class Cart extends Component {
       orderPrice: this.calculateTotal()
     }
 
-    let remoteUrl = 'http://localhost:3030'
+    let remoteUrl = Meteor.absoluteUrl();
     let remote = DDP.connect(remoteUrl);
 
     remote.call('orders.insert', order, (err, res)=>{
       if(err){
-        console.log(err)
+        alert(JSON.stringify(err))
       } else{
         Session.set('cart', [])
-        history.back();
         alert('Thank you for your order. Wait for a call');
+        history.back();
       }
     })
   }
